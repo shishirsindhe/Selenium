@@ -12,5 +12,8 @@ driver.find_element("xpath","//input[@name='password']").send_keys("shishirsindh
 driver.find_element("xpath","//input[@name='commit']").click()
 driver.find_element("xpath","//img[@class='avatar circle']").click()
 driver.find_element("xpath","//span[.='Your repositories']").click()
-driver.find_element("xpath","//a[contains(.,' Selenium_Prcatise')]").click()
-# driver.find_element("xpath","(//a[@class='Link--primary'])[4]").click()
+driver.find_element("xpath","//a[contains(.,' Selenium')]").click()
+element=driver.find_element("xpath","(//a[.='Github.py'])[2]")
+if element.is_displayed():
+    assert True
+
