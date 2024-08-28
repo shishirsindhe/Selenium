@@ -2,6 +2,7 @@ from selenium.webdriver.chrome.webdriver import WebDriver as Chrome
 from selenium.webdriver.chrome.options import Options
 from time import sleep
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 chrome_options=Options()
 chrome_options.add_experimental_option(name="detach",value=True)
 driver=Chrome(chrome_options)
@@ -32,17 +33,59 @@ driver.maximize_window()
 # driver.execute_script(f"window.scrollBy({loc['x']},{loc['y']})")
 
 ########################################################################################################################
-# driver.get("https://www.google.co.in/search?q=shishir+sindhe&sca_esv=f4efe242ec4104b1&sca_upv=1&sxsrf=ADLYWIJqKZOol_k-tErl0Yxaalh4kxrY6A%3A1723194627072&source=hp&ei=A921ZtMJu4C-vQ-AyuvYDw&iflsig=AL9hbdgAAAAAZrXrEzd_oRRgp1zOAa2dOwsaD95P_wp9&ved=0ahUKEwiTl_ycyOeHAxU7gK8BHQDlGvsQ4dUDCBk&uact=5&oq=shishir+sindhe&gs_lp=Egdnd3Mtd2l6Ig5zaGlzaGlyIHNpbmRoZTIHEC4YgAQYDTIHEAAYgAQYDTIHEAAYgAQYDTIHEAAYgAQYDTIHEAAYgAQYDTIHEAAYgAQYDTIGEAAYDRgeMgYQABgNGB4yBhAAGA0YHjIGEAAYDRgeSOJpUKUSWK1kcAt4AJABAJgBpgGgAZoWqgEEMi4yMrgBA8gBAPgBAZgCI6ACwBeoAgrCAgcQIxgnGOoCwgIHEC4YJxjqAsICDRAuGNEDGMcBGCcY6gLCAgoQIxiABBgnGIoFwgILEAAYgAQYkQIYigXCAg4QLhiABBixAxiDARiKBcICCxAAGIAEGLEDGIMBwgIREC4YgAQYsQMY0QMYgwEYxwHCAgoQLhiABBgnGIoFwgIQEC4YgAQY0QMYQxjHARiKBcICEBAAGIAEGLEDGEMYgwEYigXCAhEQLhiABBixAxiDARjUAhiKBcICChAAGIAEGEMYigXCAgoQLhiABBhDGIoFwgINEC4YgAQYsQMYQxiKBcICERAuGIAEGMcBGJgFGI4FGK8BwgIFEAAYgATCAggQLhiABBixA8ICDRAAGIAEGLEDGEMYigXCAhAQABiABBixAxhDGMkDGIoFwgILEAAYgAQYkgMYigXCAgsQLhiABBixAxjUAsICChAAGIAEGAIYywHCAgsQLhiABBixAxiDAcICCBAAGIAEGLEDwgIOEC4YgAQYxwEYjgUYrwHCAgsQLhiABBjHARivAcICBRAuGIAEwgILEAAYgAQYhgMYigXCAggQABiABBiiBMICBRAhGKABwgIGEAAYFhgewgIIEAAYFhgKGB7CAgUQIRifBcICBxAhGKABGAqYAwySBwUxMy4yMqAHgOsB&sclient=gws-wiz")
-# names=driver.find_elements("xpath","//div[@class='s6JM6d']/..//h3")
-# shishir=[]
-# for name in names:
-#     shishir.append(name.text)
-# print(shishir)
-# for ssr in shishir:
-#     if "shishir" in ssr.split():
-#         print(ssr)
-# for ssr in shishir:
-#     if "Shishir" in shishir:
-#          print(ssr)
+
+# Script to click on google search and enter your name and print all your names
+# driver.get("https://www.google.com/")
+# driver.find_element("xpath","//textarea[@class='gLFyf']").send_keys("Python")
+# action=ActionChains(driver)
+# action.send_keys(Keys.ENTER).perform()
+# items=driver.find_elements("xpath","//*[contains(text(),'Python')]")
+# py=[]
+# for item in items:
+#     py.append(item.text)
+# print(py)
+# print(len(py))
+
+########################################################################################################################
+
+# Get all Chrome details
+# driver.get("https://practice.expandtesting.com/dynamic-table")
+# for _ in range(10):
+#     details = driver.find_elements("xpath", "//td[.='Chrome']/..//td")
+#     for detail in details:
+#         print(detail.text)
+#     print('*' * 15)
+#     driver.refresh()
+
+########################################################################################################################
+
+# Script to get all the python release links
+# driver.get("https://www.python.org/downloads/")
+# elements=driver.find_elements("xpath","//div[@class='row download-list-widget']//a[contains(.,'Python')]")
+# for element in elements:
+#     print(element.text)
+#     print(element.get_attribute("href"))
+#     sleep(2)
+
+########################################################################################################################
+
+# Script to print all the values of nifty 50 from share market
+# driver.get("https://www.nseindia.com/market-data/live-equity-market")
+# sleep(5)
+# stock=driver.find_element("xpath","//td[.='NIFTY 50']/..//td[@class='bold text-right lowHighInd']")
+# for _ in range(100):
+#     stock = driver.find_element("xpath", "//td[.='NIFTY 50']/..//td[@class='bold text-right lowHighInd']")
+#     print(stock.text)
+
+########################################################################################################################
+
+# Script to scroll down and capture every element on amazon
+# driver.get("https://www.amazon.in/s?k=mobile&crid=TP7PVIAE1PBB&sprefix=mobile%2Caps%2C254&ref=nb_sb_noss_1")
+# elements=driver.find_elements("xpath","//a[@class='a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal']")
+# for element in elements:
+#     print(element.text)
+#     print(element.get_attribute("href"))
+#     sleep(2)
+#     pics=element.screenshot_as_png
 
 ########################################################################################################################
