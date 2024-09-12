@@ -1,8 +1,11 @@
 from selenium.webdriver.chrome.webdriver import WebDriver as Chrome
 from selenium.webdriver.chrome.options import Options
 from time import sleep
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 chrome_options=Options()
 chrome_options.add_experimental_option(name="detach",value=True)
 driver=Chrome(chrome_options)
@@ -89,5 +92,18 @@ driver.maximize_window()
 #     pics=element.screenshot_as_png
 
 ########################################################################################################################
-
-print("Hai")
+driver.get("https://www.cardekho.com/")
+sleep(10)
+driver.find_element("xpath","//i[.='By Brand']/..//span[@class='gs_control__indicator']").click()
+element=driver.find_element("xpath","//input[@id='bmvBrand']")
+element.click()
+cars=driver.find_elements("xpath","//li[@class='gs_ta_choice']")
+for car in cars:
+    element.send_keys(car.text)
+    action=ActionChains(driver)
+    element1=driver.find_element("xpath","//input[@name='bmvModel']")
+    element1.click()
+    models=driver.find_elements("xpath","//input[@name='bmvModel']/..//li")
+    for model in models:
+        element1.send_keys(model.text)
+        action.send_keys(Keys.ENTER)
