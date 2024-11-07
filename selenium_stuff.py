@@ -22,7 +22,7 @@ driver.maximize_window()
 
 ########################################################################################################################
 
-# Scroll to element using ActionChains
+# Script to scroll to element using ActionChains
 # driver.find_element("xpath","//input[@class='col-xs-20 searchformInput keyword']").send_keys("Kitchen Product")
 # sleep(5)
 # driver.find_element("xpath","//span[@class='searchTextSpan']").click()
@@ -92,18 +92,37 @@ driver.maximize_window()
 #     pics=element.screenshot_as_png
 
 ########################################################################################################################
-driver.get("https://www.cardekho.com/")
-sleep(10)
-driver.find_element("xpath","//i[.='By Brand']/..//span[@class='gs_control__indicator']").click()
-element=driver.find_element("xpath","//input[@id='bmvBrand']")
-element.click()
-cars=driver.find_elements("xpath","//li[@class='gs_ta_choice']")
-for car in cars:
-    element.send_keys(car.text)
-    action=ActionChains(driver)
-    element1=driver.find_element("xpath","//input[@name='bmvModel']")
-    element1.click()
-    models=driver.find_elements("xpath","//input[@name='bmvModel']/..//li")
-    for model in models:
-        element1.send_keys(model.text)
-        action.send_keys(Keys.ENTER)
+# driver.get("https://www.cardekho.com/")
+# sleep(10)
+# driver.find_element("xpath","//i[.='By Brand']/..//span[@class='gs_control__indicator']").click()
+# element=driver.find_element("xpath","//input[@id='bmvBrand']")
+# element.click()
+# cars=driver.find_elements("xpath","//li[@class='gs_ta_choice']")
+# for car in cars:
+#     element.send_keys(car.text)
+#     action=ActionChains(driver)
+#     element1=driver.find_element("xpath","//input[@name='bmvModel']")
+#     element1.click()
+#     models=driver.find_elements("xpath","//input[@name='bmvModel']/..//li")
+#     for model in models:
+#         element1.send_keys(model.text)
+#         action.send_keys(Keys.ENTER)
+
+######################################################################################################################
+
+# script to print OS and it's versions from demo.html
+driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
+versions=driver.find_elements("xpath","//table[@name='os']//td")
+OS=["Android","Linux","Windows","iOS"]
+version=["3.141","3.6.0","3.140","3.141"]
+title=[]
+out={}
+for element in versions:
+    if not element.text=="Download":
+        title.append(element.text)
+for os,ver in zip(OS,version):
+    if os in title or ver in title:
+        out[os]=ver
+print(out)
+
+#####################################################################################################################
