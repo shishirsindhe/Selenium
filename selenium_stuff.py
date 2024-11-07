@@ -111,8 +111,8 @@ driver.maximize_window()
 ######################################################################################################################
 
 # script to print OS and it's versions from demo.html
-driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
-versions=driver.find_elements("xpath","//table[@name='os']//td")
+# driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
+# versions=driver.find_elements("xpath","//table[@name='os']//td")
 # Method 1
 # OS=["Android","Linux","Windows","iOS"]
 # version=["3.141","3.6.0","3.140","3.141"]
