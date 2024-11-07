@@ -113,16 +113,29 @@ driver.maximize_window()
 # script to print OS and it's versions from demo.html
 driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
 versions=driver.find_elements("xpath","//table[@name='os']//td")
-OS=["Android","Linux","Windows","iOS"]
-version=["3.141","3.6.0","3.140","3.141"]
-title=[]
-out={}
-for element in versions:
-    if not element.text=="Download":
-        title.append(element.text)
-for os,ver in zip(OS,version):
-    if os in title or ver in title:
-        out[os]=ver
-print(out)
+# Method 1
+# OS=["Android","Linux","Windows","iOS"]
+# version=["3.141","3.6.0","3.140","3.141"]
+# title=[]
+# out={}
+# for element in versions:
+#     if not element.text=="Download":
+#         title.append(element.text)
+# for os,ver in zip(OS,version):
+#     if os in title or ver in title:
+#         out[os]=ver
+# print(out)
 
+# Method2
+# OS=[]
+# version=[]
+# for element in versions:
+#     if not element.text=="Download":
+#         if 'A'<=element.text<='z':
+#             OS.append(element.text)
+#         else:
+#             version.append(element.text)
+#
+# out={os:ver for os,ver in zip(OS,version)}
+# print(out)
 #####################################################################################################################
