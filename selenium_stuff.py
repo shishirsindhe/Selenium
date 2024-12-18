@@ -139,3 +139,35 @@ driver.maximize_window()
 # out={os:ver for os,ver in zip(OS,version)}
 # print(out)
 #####################################################################################################################
+
+# Script to click on all the checkboxes of the Languages
+driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
+# boxes=driver.find_elements("xpath","//table[@style='width:50%']//tr//td//input")
+# for box in boxes:
+#     box.click()
+
+#####################################################################################################################
+
+# Script to demonstrate handeling of listboxes
+
+driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
+list_box=driver.find_element("xpath","//select[@id='multiple_cars']")
+select=Select(list_box)
+# select.select_by_visible_text("Audi")
+# sleep(2)
+# select.select_by_visible_text("Mercedes")
+# sleep(2)
+# select.select_by_index(2)
+# sleep(2)
+# select.select_by_value("jgr")
+
+# To print all the options of the listbox
+all_options=select.options
+# for opt in all_options:
+#     print(opt.text)
+
+# To Select every option one by one
+# for opt in all_options:
+#     select.select_by_visible_text(opt.text)
+#     sleep(2)
+
