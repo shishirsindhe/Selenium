@@ -141,7 +141,7 @@ driver.maximize_window()
 #####################################################################################################################
 
 # Script to click on all the checkboxes of the Languages
-driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
+# driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
 # boxes=driver.find_elements("xpath","//table[@style='width:50%']//tr//td//input")
 # for box in boxes:
 #     box.click()
@@ -150,9 +150,9 @@ driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
 
 # Script to demonstrate handeling of listboxes
 
-driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
-list_box=driver.find_element("xpath","//select[@id='multiple_cars']")
-select=Select(list_box)
+# driver.get("file:///C:/Users/SHISHIR/Desktop/demo.html")
+# list_box=driver.find_element("xpath","//select[@id='multiple_cars']")
+# select=Select(list_box)
 # select.select_by_visible_text("Audi")
 # sleep(2)
 # select.select_by_visible_text("Mercedes")
@@ -162,7 +162,7 @@ select=Select(list_box)
 # select.select_by_value("jgr")
 
 # To print all the options of the listbox
-all_options=select.options
+# all_options=select.options
 # for opt in all_options:
 #     print(opt.text)
 
@@ -171,3 +171,18 @@ all_options=select.options
 #     select.select_by_visible_text(opt.text)
 #     sleep(2)
 
+
+# Script to assert if all the elements are selected in the dropdown or not
+# def assert_dropdown():
+#     drop_options=select.options
+#     options=[opt.text for opt in drop_options]
+#     for opt in options:
+#         select.select_by_visible_text(opt)
+#     select.deselect_by_index(3)
+#     for ele in drop_options:
+#         if not ele.is_selected():
+#             return False
+#         continue
+#     return True
+
+####################################################################################################################
