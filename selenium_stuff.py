@@ -187,7 +187,7 @@ driver.maximize_window()
 
 ####################################################################################################################
 
-# Script to handell input boxes with same html structure
+# Script to handel input boxes with same html structure
 
 # driver.get("file:///C:/Users/SHISHIR/OneDrive/Desktop/demo.html")
 # first_input_boxes=driver.find_elements("xpath","//input[@class='first_row']")
