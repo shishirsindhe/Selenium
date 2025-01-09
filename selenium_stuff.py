@@ -186,3 +186,45 @@ driver.maximize_window()
 #     return True
 
 ####################################################################################################################
+
+# Script to handell input boxes with same html structure
+
+# driver.get("file:///C:/Users/SHISHIR/OneDrive/Desktop/demo.html")
+# first_input_boxes=driver.find_elements("xpath","//input[@class='first_row']")
+# cars=["Mercedes","Ferrari","Bugatti"]
+# for box,car in zip(first_input_boxes,cars):
+#     box.send_keys(car)
+# second_input_boxes=driver.find_elements("xpath","//input[@class='second_row']")
+# bikes=["kawasaki","Ducati","Yamaha"]
+# for box,bike in zip(second_input_boxes,bikes):
+#     box.send_keys(bike)
+# third_input_boxes=driver.find_elements("xpath","//input[@class='third_row']")
+# Airplanes=["Airbus","Boeing","F-16"]
+# for box,plane in zip(third_input_boxes,Airplanes):
+#     box.send_keys(plane)
+
+#####################################################################################################################
+
+# Script to Click all the checkboxes of OS
+
+# driver.get("file:///C:/Users/SHISHIR/OneDrive/Desktop/demo.html")
+# boxes=driver.find_elements("xpath","//input[@name='download']")
+# for box in boxes:
+#     box.click()
+#     sleep(2)
+
+####################################################################################################################
+
+#Script to print all Languages in the column
+
+# driver.get("file:///C:/Users/SHISHIR/OneDrive/Desktop/demo.html")
+# languages=driver.find_elements("xpath","//table[@name='selenium']//tr//td")
+# output=[]
+# for language in languages:
+#     out = ""
+#     out+=language.text
+#     if out.isalpha():
+#         output.append(out)
+# print(output)
+
+###################################################################################################################
